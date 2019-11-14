@@ -1,5 +1,5 @@
 export const environment = {
-  production: true,
+  production: false,
   version: '1.0.0.0',
   URL_PREFIX: 'https://api.openweathermap.org/data/2.5',
   API: 'd9feb43ac9440ed2d52630b750c59cee',

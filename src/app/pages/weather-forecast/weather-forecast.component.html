@@ -1,0 +1,26 @@
+<div class="col-md-8 col-xs-12 maxDivWidth">
+  <div class="table-responsive">
+    <table class="table tableClass">
+      <thead>
+      <tr>
+        <th scope="col">Time</th>
+        <th scope="col">Cloud</th>
+        <th scope="col">Temperature</th>
+        <th scope="col">Humidity</th>
+        <th scope="col">Wind Speed</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let forcast of forecastData | paginate: { itemsPerPage: itemsPerPage, currentPage: p }; let i = index">
+        <td>{{forcast.time}}</td>
+        <td>{{forcast.cloud}}</td>
+        <td *ngIf="isFaheranhite === true">{{forcast.temp}}</td>
+        <td *ngIf="isFaheranhite === false">{{forcast.temp | temp}}</td>
+        <td>{{forcast.humidity}}</td>
+        <td>{{forcast.windSpeed}}</td>
+      </tr>
+      </tbody>
+      <pagination-controls *ngIf="forecastData.length != 0" (pageChange)="p = $event"></pagination-controls>
+    </table>
+  </div>
+</div>

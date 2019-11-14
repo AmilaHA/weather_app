@@ -1,0 +1,44 @@
+<div class="col-md-4 col-xs-12 maxDivWidth">
+  <div class="forecast-container">
+    <div class="today forecast">
+      <div class="forecast-header">
+      </div> <!-- .forecast-header -->
+      <div class="forecast-content">
+        <div class="location">{{city}}</div>
+        <div class="degree">
+          <div class="num" *ngIf="isFaheranhite === true">{{temprature}}
+            <sup>o</sup>F
+          </div>
+          <div class="num" *ngIf="isFaheranhite === false">{{temprature | temp}}
+            <sup>o</sup>C
+          </div>
+          <div class="forecast-icon">
+            <img [src]="imageIcon" alt="" width=90>
+          </div>
+        </div>
+        <div class="row container">
+              <span class="tempClass">
+              <!--<img src="images/icon-umberella.png" alt="">20%-->
+              <label>Humidity : </label>
+              {{humidity}}
+            </span>
+        </div>
+
+        <div class="row container">
+              <span class="tempClass">
+              <!--<img src="images/icon-umberella.png" alt="">20%-->
+              <label>Min Temp : </label>
+              {{minTemp}}
+            </span>
+          <span class="tempClass">
+              <!--<img src="images/icon-wind.png" alt="">18km/h-->
+              <label>Max Temp : </label>
+              {{minTemp}}
+            </span>
+        </div>
+        <!--<span><img src="images/icon-compass.png" alt="">East</span>-->
+      </div>
+    </div>
+  </div>
+  <!--<span class="iconClass"><i class="fa fa-lock"></i>  </span>-->
+</div>
